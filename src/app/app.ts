@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { HeaderComponent } from './components/header.component';
+import { ExplorerComponent } from './components/explorer.component';
+import { CanvasComponent } from './components/canvas.component';
+import { PropertiesComponent } from './components/properties.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HeaderComponent, ExplorerComponent, CanvasComponent, PropertiesComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App {
-  protected readonly title = signal('schema-ops-frontend');
-}
+export class App {}
